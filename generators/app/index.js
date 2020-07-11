@@ -47,10 +47,6 @@ module.exports = class extends Generator {
     );
   }
 
-  install() {
-    this.npmInstall();
-  }
-
   writing() {
     const done = this.async();
     remote(
