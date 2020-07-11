@@ -1,5 +1,5 @@
 {
-  "name": "generator-tampermonkey",
+  "name": "@feizheng/generator-tampermonkey",
   "version": "1.0.0",
   "description": "generator-tampermonkey-description",
   "homepage": "https://github.com/afeiship/generator-tampermonkey",
