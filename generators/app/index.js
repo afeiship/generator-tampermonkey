@@ -6,7 +6,6 @@ const glob = require("glob");
 const { resolve } = require("path");
 const remote = require("yeoman-remote");
 const yoHelper = require("@feizheng/yeoman-generator-helper");
-const replace = require("replace-in-file");
 
 module.exports = class extends Generator {
   initializing() {
@@ -18,7 +17,7 @@ module.exports = class extends Generator {
     this.log(
       yosay(
         `Welcome to the stunning ${chalk.red(
-          "generator-generator-tampermonkey"
+          "generator-tampermonkey"
         )} generator!`
       )
     );
@@ -71,22 +70,5 @@ module.exports = class extends Generator {
         done();
       }
     );
-  }
-
-  end() {
-    const { scope, description, project_name } = this.props;
-    const files = glob.sync(
-      resolve(this.destinationPath(), "{**,.*}")
-    );
-
-    replace.sync({
-      files,
-      from: [
-        /boilerplate-scope/g,
-        /boilerplate-tampermonkey-description/g,
-        /boilerplate-tampermonkey/g,
-      ],
-      to: [scope, description, project_name]
-    });
   }
 };
