@@ -9,7 +9,7 @@ const yoHelper = require("@feizheng/yeoman-generator-helper");
 
 module.exports = class extends Generator {
   initializing() {
-    this.composeWith("dotfiles:stdapp");
+    this.composeWith("@feizheng/dotfiles:stdapp");
   }
 
   prompting() {
