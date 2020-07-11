@@ -8,10 +8,6 @@ const remote = require("yeoman-remote");
 const yoHelper = require("@feizheng/yeoman-generator-helper");
 
 module.exports = class extends Generator {
-  initializing() {
-    this.composeWith("@feizheng/dotfiles:stdapp");
-  }
-
   prompting() {
     // Have Yeoman greet the user.
     this.log(
