@@ -1,5 +1,5 @@
 {
-  "name": "@feizheng/generator-tampermonkey",
+  "name": "@jswork/generator-tampermonkey",
   "version": "1.0.0",
   "description": "generator-tampermonkey-description",
   "homepage": "https://github.com/afeiship/generator-tampermonkey",
@@ -12,9 +12,13 @@
     "generators"
   ],
   "keywords": [
+    "generator",
+    "tampermonkey",
+    "greasyfork",
+    "gm",
     "yeoman",
     "yo",
-    "yeoman-generator"
+    "template"
   ],
   "devDependencies": {
     "yeoman-test": "^2.1.0",
