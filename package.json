@@ -1,7 +1,7 @@
 {
   "name": "@jswork/generator-tampermonkey",
   "version": "1.0.0",
-  "description": "generator-tampermonkey-description",
+  "description": "Generator for tampermonkey plugin.",
   "homepage": "https://github.com/afeiship/generator-tampermonkey",
   "author": {
     "name": "afeiship",
@@ -21,15 +21,16 @@
     "template"
   ],
   "devDependencies": {
-    "yeoman-test": "^2.1.0",
+    "prettier": "^1.19.1",
     "yeoman-assert": "^3.1.1",
-    "prettier": "^1.19.1"
+    "yeoman-test": "^2.1.0"
   },
   "engines": {
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "@feizheng/yeoman-generator-helper": "^1.0.9",
+    "@jswork/generator-prompts": "^1.1.6",
+    "@jswork/yeoman-generator-helper": "^1.0.9",
     "chalk": "^3.0.0",
     "yeoman-generator": "^4.5.0",
     "yeoman-remote": "^1.0.1",

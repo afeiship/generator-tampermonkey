@@ -1,2 +1,2 @@
 # generator-tampermonkey
-> generator-tampermonkey-description
+> Generator for tampermonkey plugin.

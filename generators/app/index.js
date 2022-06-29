@@ -1,66 +1,22 @@
-"use strict";
-const Generator = require("yeoman-generator");
-const chalk = require("chalk");
-const yosay = require("yosay");
-const glob = require("glob");
-const { resolve } = require("path");
-const remote = require("yeoman-remote");
-const yoHelper = require("@feizheng/yeoman-generator-helper");
+'use strict';
+const Generator = require('yeoman-generator');
+const globby = require('globby');
+const yoHelper = require('@jswork/yeoman-generator-helper');
+const genp = require('@jswork/generator-prompts');
+const prompts = genp(['scope', 'registry', 'project_name', 'description']);
 
 module.exports = class extends Generator {
-  prompting() {
+  async prompting() {
     // Have Yeoman greet the user.
-    this.log(
-      yosay(
-        `Welcome to the stunning ${chalk.red(
-          "generator-tampermonkey"
-        )} generator!`
-      )
-    );
-
-    const prompts = [
-      {
-        type: "input",
-        name: "scope",
-        message: "Your scope?(eg: like `@babel`)",
-        default: 'jswork'
-      },
-      {
-        type: "input",
-        name: "project_name",
-        message: "Your project_name (eg: like this `react-button` )?",
-        default: yoHelper.discoverRoot
-      },
-      {
-        type: "input",
-        name: "description",
-        message: "Your description?"
-      }
-    ];
-
-    return this.prompt(prompts).then(
-      (props) => {
-        // To access props later use this.props.someAnswer;
-        this.props = props;
-        yoHelper.rewriteProps(props);
-      }
-    );
+    this.props = await this.prompt(prompts);
   }
 
   writing() {
-    const done = this.async();
-    remote(
-      "afeiship",
-      "boilerplate-tampermonkey",
-      (err, cachePath) => {
-        // copy files:
-        this.fs.copyTpl(
-          glob.sync(resolve(cachePath, "{**,.*}")),
-          this.destinationPath(),
-          this.props
-        );
-        done();
-      }
+    const ctx = yoHelper.ctx;
+    this.fs.copyTpl(
+      globby.sync(this.templatePath('**'), { dot: true }),
+      this.destinationPath(),
+      { ...this.props, ctx }
     );
   }
 };
