@@ -5,7 +5,7 @@
 // @description  <%= description %>
 // @author       afeiship
 // @match        *://*/*
-// @require  https://unpkg.com/@jswork/gm-sdk@1.0.21
+// @require  https://unpkg.com/@jswork/gm-sdk@1.0.26
 // @require  https://cdn.jsdelivr.net/npm/@jswork/<%= project_name %>@__VERSION__
 // @resource GM_STYLES https://unpkg.com/@jswork/gm-styles@1.1.3
 // @grant GM_addStyle
